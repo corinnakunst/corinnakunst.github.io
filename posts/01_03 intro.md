@@ -1,5 +1,0 @@
----
-tags: intro
-class: meetpoint
----
-
