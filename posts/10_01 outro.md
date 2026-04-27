@@ -1,5 +1,0 @@
----
-tags: outro
-class: exitpoint
----
-
