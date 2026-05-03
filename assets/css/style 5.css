@@ -1,3 +1,8 @@
+:root {
+  --margin: 2vw;
+  --main: 96vw;
+  --buffer: 2.5vw
+}
 
 canvas {
   display: block;
@@ -8,15 +13,8 @@ canvas {
   
 }
 
-:root {
-  --margin: 2vw;
-  --main: 96vw;
-  --buffer: 2.5vw
-}
-
 body{
   width: 100vw;
-  height: 100vh;
   margin-left: 0px;
   margin-top: 0px;
   overflow-x: hidden;
@@ -25,7 +23,6 @@ body{
   font-family:"poppins", poppins;
   /* justify-items: center; */  
 } 
-
 
 h1{
   font-weight: lighter;

@@ -1,3 +1,8 @@
+:root {
+  --margin: 2vw;
+  --main: 96vw;
+  --buffer: 2.5vw
+}
 
 canvas {
   display: block;
@@ -8,15 +13,8 @@ canvas {
   
 }
 
-:root {
-  --margin: 2vw;
-  --main: 96vw;
-  --buffer: 2.5vw
-}
-
 body{
   width: 100vw;
-  height: 100vh;
   margin-left: 0px;
   margin-top: 0px;
   overflow-x: hidden;
@@ -25,7 +23,6 @@ body{
   font-family:"poppins", poppins;
   /* justify-items: center; */  
 } 
-
 
 h1{
   font-weight: lighter;
@@ -109,25 +106,18 @@ p{
         align-self: center;
         grid-area: 1/1/2/4;
         /* border: none; */
-       
+        
+        
       }
-          .lang{
-            height: 50vh;
-          }
-          .breit{
-            width: 20vw;
 
-          }
-          .quadrat{
-            width: 30vw;
-          }
-
-
-      video::-webkit-media-controls-enclosure {
-          background-image: none !important;
-          background: transparent !important;
-          box-shadow: greenyellow !important;
-      }
+      iframe {
+        width: 40% !important;
+        height: 40% !important;
+        -webkit-transform: scale(0.01);
+        transform: scale(0.5);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+}
       
       .counter{
         grid-area: 1/2/2/3;

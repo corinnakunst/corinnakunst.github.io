@@ -1,4 +1,8 @@
-
+:root {
+  --margin: 2vw;
+  --main: 96vw;
+  --buffer: 2.5vw
+}
 canvas {
   display: block;
   position: fixed;
@@ -8,15 +12,8 @@ canvas {
   
 }
 
-:root {
-  --margin: 2vw;
-  --main: 96vw;
-  --buffer: 2.5vw
-}
-
 body{
   width: 100vw;
-  height: 100vh;
   margin-left: 0px;
   margin-top: 0px;
   overflow-x: hidden;
@@ -25,7 +22,6 @@ body{
   font-family:"poppins", poppins;
   /* justify-items: center; */  
 } 
-
 
 h1{
   font-weight: lighter;
@@ -109,25 +105,14 @@ p{
         align-self: center;
         grid-area: 1/1/2/4;
         /* border: none; */
-       
+        height: fit-content;
+        width: fit-content;
       }
-          .lang{
-            height: 50vh;
-          }
-          .breit{
-            width: 20vw;
+        /* iframe > #document > html > body > img {
+          height: 10vh;
+          width: 10vw;
+        } */
 
-          }
-          .quadrat{
-            width: 30vw;
-          }
-
-
-      video::-webkit-media-controls-enclosure {
-          background-image: none !important;
-          background: transparent !important;
-          box-shadow: greenyellow !important;
-      }
       
       .counter{
         grid-area: 1/2/2/3;

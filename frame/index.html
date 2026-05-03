@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: black;
+    }
+
+    img, video {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <img id="media">
+</body>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const src = params.get("src");
+
+  const media = document.getElementById("media");
+
+  if (src.endsWith(".mp4")) {
+    const video = document.createElement("video");
+    video.src = src;
+    video.controls = true;
+    media.replaceWith(video);
+  } else {
+    media.src = src;
+  }
+</script>
+</html>

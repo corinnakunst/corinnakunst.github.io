@@ -22,7 +22,7 @@ const exitBottom = exitEl.offsetTop + exitEl.offsetHeight;
 const remainingScrollHeightexitpoint = document.body.scrollHeight - exitBottom;
 
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight);
+  createCanvas(windowWidth, windowHeight);
 }
 
 onresize = (event) => {
@@ -37,14 +37,12 @@ onresize = (event) => {
   puppilengrosse = augengrosse * 0.5;
 
 }
-
 function resize(){
   createCanvas(window.innerWidth,window.innerHeight)
 }
 
 function draw() {
 clear();
-
  if (window.scrollY < meetBottom){
     scrollRatio = constrain(window.scrollY / (document.body.scrollHeight - (windowHeight)-(remainingScrollHeightmeetpoint)), 0, 1);
     
