@@ -28,3 +28,4 @@ document.querySelectorAll('.contentscreen').forEach(screen => {
     count[currentIndex].classList.add('active');
   });
 });
+

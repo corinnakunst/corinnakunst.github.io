@@ -25,34 +25,54 @@ function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
 }
 
-onresize = (event) => {
-    resizeCanvas(window.innerWidth, window.innerHeight);
-    scrollanfangauge = 0.1 * window.innerHeight;
-  scrollendeauge = 0.5* window.innerHeight;
-  scrollanfangaugeich = 0.5 * window.innerHeight;
-  scrollendeaugeich = window.innerHeight; 
-  augengrosse = window.innerWidth/9;
-  augenXich = window.innerWidth * 0.05 + augengrosse *1.05;
-  augenX = window.innerWidth * 0.95 - augengrosse* 1.05;
-  puppilengrosse = augengrosse * 0.5;
+// onresize = (event) => {
+//     resizeCanvas(window.innerWidth, window.innerHeight);
 
+//     scrollanfangauge = 0.1 * window.innerHeight;
+//     scrollendeauge = 0.5* window.innerHeight;
+
+//     scrollanfangaugeich = 0.5 * window.innerHeight;
+//     scrollendeaugeich = 1.05*window.innerHeight;
+
+//     augengrosse = window.innerWidth/8;
+//     augenXich = window.innerWidth * 0.05 + augengrosse *1.05;
+//     augenX = window.innerWidth * 0.95 - augengrosse* 1.05;
+//     puppilengrosse = augengrosse * 0.5;
+
+//     pupilOffset;
+//     scrollRatio;
+
+// }
+
+function windowResized() {
+  resizeCanvas(window.innerWidth, window.innerHeight);
+  scrollanfangauge = 0.1 * window.innerHeight;
+    scrollendeauge = 0.5* window.innerHeight;
+
+    scrollanfangaugeich = 0.5 * window.innerHeight;
+    scrollendeaugeich = 1.05*window.innerHeight;
+
+    augengrosse = window.innerWidth/8;
+    augenXich = window.innerWidth * 0.05 + augengrosse *1.05;
+    augenX = window.innerWidth * 0.95 - augengrosse* 1.05;
+    puppilengrosse = augengrosse * 0.5;
 }
 
-function resize(){
-  createCanvas(window.innerWidth,window.innerHeight)
-}
+// function resize(){
+//   createCanvas(window.innerWidth, window.innerHeight)
+// }
 
 function draw() {
 clear();
 
  if (window.scrollY < meetBottom){
-    scrollRatio = constrain(window.scrollY / (document.body.scrollHeight - (windowHeight)-(remainingScrollHeightmeetpoint)), 0, 1);
+    scrollRatio = constrain(window.scrollY / (document.body.scrollHeight - (window.innerHeight)-(remainingScrollHeightmeetpoint)), 0, 1);
     
  } else if (window.scrollY < exitBottom) {
     scrollRatio = 1;
     
  } else {
-    let exitProgress = map(window.scrollY, exitBottom, document.body.scrollHeight - windowHeight, 0, 1);
+    let exitProgress = map(window.scrollY, exitBottom, document.body.scrollHeight - window.innerHeight, 0, 1);
     scrollRatio = 1 - exitProgress;
  } 
 
@@ -111,5 +131,15 @@ function drawEyes( y, yanders) {
   ellipse(augenXich + puppilengrosse * 1.1 - xpupil * -1, yanders, puppilengrosse, puppilengrosse);
   pop()
   }
+
+  document.getElementById("buttonmouse");
+document.addEventListener("mousemove", (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+
+    buttonmouse.style.marginLeft = x + "px";
+    buttonmouse.style.marginTop = y + "px";
+    // buttonmouse.textContent = `X: ${x} | Y: ${y}`;
+  });
 
   
