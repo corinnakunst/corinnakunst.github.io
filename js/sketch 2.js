@@ -132,6 +132,25 @@ function drawEyes( y, yanders) {
   pop()
   }
 
+  const buttonmouse = document.getElementById("buttonmouse");
+  const screens = document.querySelectorAll(".contentscreen");
 
-  
+screens.forEach(screen => {
+  screen.addEventListener("mouseenter", () => {
+    buttonmouse.style.visibility = "visible";
+  });
+  screen.addEventListener("mouseleave", () => {
+    buttonmouse.style.visibility = "hidden";
+  });
+});
+
+  document.addEventListener("mousemove", (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
+
+    buttonmouse.style.left = x + "px";
+    buttonmouse.style.top = y + "px";
+    // buttonmouse.textContent = `X: ${x} | Y: ${y}`;
+  });
+
   

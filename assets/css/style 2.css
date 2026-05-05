@@ -187,20 +187,33 @@ h1{
 
 #buttonmouse{
   position: fixed;
+  /* margin-right: var(--buffer);
+  margin-bottom: 10vh; */
+  left: 0;
+  top: 0;
   display: flex;
-  width: 4em;
-  height: 4em;
-      /* justify-content: center;
-      align-items: center; */
+      justify-content: center;
+      align-items: center;
+  /* width: calc(var(--column-w)*0.5);
+  height: calc(var(--column-w)*0.5); */
   border: solid white;
   border-radius: 50%;
   z-index: 100;
+  /* opacity: 10; */
+  /* visibility: hidden; */
   pointer-events: none;
-  transform: translate(-2em, -2em);
-  
+  /* background-color: rgb(255, 255, 255); */
+  /* transform: translate(calc((var(--column-w)*0.5)/-2),calc((var(--column-w)*0.5)/-2)); */
 }
-  #buttonmouse>h1{
-    align-self: center;
+  #buttonmouse>p{
+    /* transform: translate(calc(var(--column-w)/4),calc(var(--column-w)/4)); */
+    /* border: solid; */
     color: white;
     text-align: center;
+    width: fit-content;
+    height: fit-content;
   }
+/* 
+.contentscreen:hover ~ #buttonmouse{
+  visibility: visible;
+} */
