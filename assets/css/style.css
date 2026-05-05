@@ -40,6 +40,10 @@ body{
   p{
     font-size: 1.5em;
   }
+
+  .klicknotiz{
+    visibility: hidden;
+  }
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
@@ -55,6 +59,7 @@ body{
   p{
     font-size: 1.3em;
   }
+
 }
 
 h1{
@@ -184,10 +189,10 @@ h1{
         }
 
 
-
-#buttonmouse{
+@media screen and (min-width: 601px) {
+  #buttonmouse{
   position: fixed;
-  display: flex;
+  display: flexbox;
   width: 4em;
   height: 4em;
       /* justify-content: center;
@@ -197,10 +202,42 @@ h1{
   z-index: 100;
   pointer-events: none;
   transform: translate(-2em, -2em);
-  
-}
-  #buttonmouse>h1{
-    align-self: center;
+  }
+  #buttonmouse>h2{
     color: white;
     text-align: center;
   }
+
+  .projektbutton:hover{
+    cursor: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .klicknotiz{
+    color: rgb(255, 255, 255);
+    border: solid white;
+    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    grid-area: 1/2/2/3;
+    justify-self: flex-end;
+    align-self: flex-end;
+    text-indent: 5vw;
+    margin-left: 1vw;
+    margin-bottom: 10vh;
+  }
+  .klicknotiz>h2{
+    text-align: center;
+  }
+
+  #buttonmouse{
+    visibility: hidden;
+  }
+   #buttonmouse>h2{
+    visibility: hidden;
+   }
+
+
+
+}
