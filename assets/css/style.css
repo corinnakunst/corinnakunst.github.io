@@ -25,7 +25,7 @@ body{
   /* justify-items: center; */  
 } 
 
-
+/*___________________________________________________________FONTS________________________________________________________________ */
 
 /* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
 @media screen and (min-width: 601px) {
@@ -84,6 +84,8 @@ h1{
   }
 /* grid-area: x / x / x / x(row-start col-start row-end col-end) */
 
+/*___________________________________________________________SCHLEIFEN________________________________________________________________ */
+
 .screen{
   grid-column: 2/3;
 }
@@ -126,10 +128,13 @@ h1{
   height: 100vh;
   display: grid;
   grid-template-columns: var(--margin) var(--main) var(--margin); ;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-items: center;
+  align-items: center;
 }
 
+
+/*___________________________________________________________PROJEKTSEITEN________________________________________________________________ */
     .projektbutton{
       height: 100vh;
       width: 100vw;
@@ -140,6 +145,7 @@ h1{
 
       .bild{
         align-self: center;
+        justify-self: center;
         grid-area: 1/1/2/4;
         z-index: 10; 
         /* border: none; */
@@ -156,27 +162,26 @@ h1{
             width: 50vw;
           }
 
-      
+/*___________________________________________________________COUNTER________________________________________________________________ */      
       .counter{
         grid-area: 1/2/2/3;
-        justify-self: flex-start;
-        align-self: flex-end;
-        z-index: 5;
+        z-index: 6;
         pointer-events: none;
         color: white;
         margin-left: var(--buffer);
         margin-bottom: 10vh;
-        
+        width: 2vw;
+        align-self: flex-end;
+        justify-self: flex-start;
       }
       .gesamtzahl{
+        z-index: 6;
         grid-area: 1/2/2/3;
-        justify-self: flex-start;
-        align-self: flex-end;
         color: white;
-        text-indent: 5vw;
-        margin-left: 1vw;
+        margin-left: 4.5vw;
         margin-bottom: 10vh;
-
+        align-self: flex-end;
+        justify-self: flex-start;
       }
 
         .inactive{
@@ -188,20 +193,27 @@ h1{
           visibility: visible;
         }
 
+    @media screen and (max-width: 600px) {
+      .gesamtzahl{
+        margin-left: 8vw;
+      }
 
+    }
+
+
+/*___________________________________________________________WEITER________________________________________________________________ */ 
 @media screen and (min-width: 601px) {
   #buttonmouse{
   position: fixed;
   display: flexbox;
   width: 4em;
   height: 4em;
-      /* justify-content: center;
-      align-items: center; */
   border: solid white;
   border-radius: 50%;
   z-index: 100;
   pointer-events: none;
   transform: translate(-2em, -2em);
+  visibility: hidden;
   }
   #buttonmouse>h2{
     color: white;
@@ -211,33 +223,42 @@ h1{
   .projektbutton:hover{
     cursor: none;
   }
+  .klicknotiz{
+    display: none;
+    visibility: hidden;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .klicknotiz{
     color: rgb(255, 255, 255);
     border: solid white;
-    border-radius: 50%;
-    width: 2em;
+    border-radius: 20%;
+    width: fit-content;
     height: 2em;
     grid-area: 1/2/2/3;
+    z-index: 6;
     justify-self: flex-end;
     align-self: flex-end;
-    text-indent: 5vw;
-    margin-left: 1vw;
     margin-bottom: 10vh;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .klicknotiz>h2{
     text-align: center;
+    font-size: 1em;
+    padding: 0.2em;
   }
 
   #buttonmouse{
     visibility: hidden;
+    display: none;
   }
    #buttonmouse>h2{
     visibility: hidden;
+    display: none;
    }
-
-
 
 }

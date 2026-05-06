@@ -1,5 +1,5 @@
 //Augen
-let scrollanfangauge = 0.1 * window.innerHeight;
+let scrollanfangauge = 0.12 * window.innerHeight;
 let scrollendeauge = 0.5* window.innerHeight;
 
 let scrollanfangaugeich = 0.5 * window.innerHeight;
@@ -90,14 +90,15 @@ function drawEyes( y, yanders) {
 
 
     pupilOffset = map(window.scrollY, 0, (document.body.scrollHeight - (windowHeight)-(remainingScrollHeightmeetpoint)), - puppilengrosse * 0.35 , puppilengrosse * 0.35);
-     let xpupil= min (pupilOffset,  puppilengrosse * 0.3)
+    let xpupil= min (pupilOffset,  puppilengrosse * 0.3)
 
     push()
   
-  drawingContext.shadowOffsetX = 5;
-  drawingContext.shadowOffsetY = -5;
-  drawingContext.shadowBlur = 10;
-  drawingContext.shadowColor = 'black';
+
+  drawingContext.shadowOffsetX = 0.005*windowWidth ;
+  drawingContext.shadowOffsetY = -0.005*windowWidth;
+  drawingContext.shadowBlur = 0.01*windowWidth;
+  drawingContext.shadowColor = 'rgb(0, 0, 0)';
   
   noFill();
   ellipse(augenX - augengrosse * 0.55, y, augengrosse);
@@ -113,10 +114,10 @@ function drawEyes( y, yanders) {
   pop()
   
   push()
-  drawingContext.shadowOffsetX = 5;
-  drawingContext.shadowOffsetY = -5;
-  drawingContext.shadowBlur = 10;
-  drawingContext.shadowColor = 'black';
+  drawingContext.shadowOffsetX = 0.005*windowWidth ;
+  drawingContext.shadowOffsetY = -0.005*windowWidth;
+  drawingContext.shadowBlur = 0.01*windowWidth;
+  drawingContext.shadowColor = 'rgb(0, 0, 0)';
 
   noFill();
   ellipse(augenXich - augengrosse * 0.55, yanders, augengrosse);
