@@ -151,6 +151,7 @@ h1{
         /* border: none; */
        
       }
+      @media screen and (min-width: 601px) {
           .lang{
             height: 75vh;
           }
@@ -161,6 +162,19 @@ h1{
           .quadrat{
             width: 50vw;
           }
+        }
+
+        @media screen and (max-width: 600px) {
+          .lang{
+            height: 75vh;
+          }
+          .breit{
+            width: 50vw;
+          }
+          .quadrat{
+            width: 50vw;
+          }
+        }
 
 /*___________________________________________________________COUNTER________________________________________________________________ */      
       .counter{
@@ -261,4 +275,27 @@ h1{
     display: none;
    }
 
+}
+/*___________________________________________________________LINK________________________________________________________________ */ 
+
+a:link{
+  /* font-weight: LightItalic; */
+  color: #000000;
+}
+/* visited link */
+a:visited {
+  color: #000000;
+  /* font-weight: 100; */
+}
+
+/* mouse over link */
+a:hover {
+  color: #000000;
+  font-weight: LightItalic;
+}
+
+/* selected link */
+a:active {
+  color: #000000;
+  /* font-weight: 100; */
 }

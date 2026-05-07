@@ -26,3 +26,10 @@
     src: url("/assets/css/fonts/Poppins-ExtraLight.otf");
 }
 
+@font-face {
+    font-family: "poppins";
+    font-weight: LightItalic;
+    font-style: normal;
+    src: url("/assets/css/fonts/Poppins-LightItalic.otf");
+}
+
