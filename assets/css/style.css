@@ -141,13 +141,14 @@ h1{
       grid-area: 1/1/2/4;
       background-image: linear-gradient(white,black 10vh, black 90vh, white);
       border: none;
+     
     }
 
       .bild{
         align-self: center;
         justify-self: center;
         grid-area: 1/1/2/4;
-        z-index: 10; 
+        z-index: 10 !important;
         /* border: none; */
        
       }
@@ -166,7 +167,7 @@ h1{
 
         @media screen and (max-width: 600px) {
           .lang{
-            height: 75vh;
+            height: 50vw;
           }
           .breit{
             width: 50vw;
@@ -279,23 +280,18 @@ h1{
 /*___________________________________________________________LINK________________________________________________________________ */ 
 
 a:link{
-  /* font-weight: LightItalic; */
   color: #000000;
-}
-/* visited link */
-a:visited {
-  color: #000000;
-  /* font-weight: 100; */
 }
 
-/* mouse over link */
+a:visited {
+  color: #000000;
+}
+
 a:hover {
   color: #000000;
   font-weight: LightItalic;
 }
 
-/* selected link */
 a:active {
   color: #000000;
-  /* font-weight: 100; */
 }
