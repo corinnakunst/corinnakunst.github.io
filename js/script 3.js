@@ -59,33 +59,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const play = document.getElementById("play");
   const pause = document.getElementById("pause");
 
-  var vidplayer= false;
+  let vidplayer= "false"
 
 
   videos.forEach(video => {
     video.addEventListener("mouseenter", () => {
       mehr.style.display = "none";
       play.style.display = "block";
-      pause.style.display = "none";
       buttonmouse.style.cursor = "none";
 
     });
     video.addEventListener("mouseleave", () => {
       mehr.style.display = "block";
       play.style.display = "none";
-      pause.style.display = "none";
 
     });
 
     video.addEventListener("click", () => {
-      if (vidplayer === false){
+      if (vidplayer ==false){
       play.style.display = "none"
       pause.style.display = "block";
       buttonmouse.style.cursor = "none";
-      vidplayer = true;
       }
       else{
-        vidplayer = false;
         play.style.display = "block"
       pause.style.display = "none";
       }
