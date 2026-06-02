@@ -140,11 +140,12 @@ h1{
 
 /*___________________________________________________________PROJEKTSEITEN________________________________________________________________ */
     .projektbutton{
-      height: 100vh;
+      height: 80vh;
       width: 100vw;
       grid-area: 1/1/2/4;
-      background-image: linear-gradient(white,rgb(0, 0, 0) 10vh, black 90vh, white);
-      
+      background-color: #000000;
+      box-shadow: 0em 0em 10vh 10vh #000000;
+      /* background-image: linear-gradient(white,rgb(0, 0, 0) 10vh, black 90vh, white); */
       backdrop-filter: blur(5px);
       /* mask-image: linear-gradient(to bottom, black 100%, white); */
       border: none;
@@ -161,6 +162,7 @@ h1{
 
        img.bild{
         z-index: 10 !important;
+        pointer-events: none;
        }
 
        video.bild{
@@ -242,8 +244,8 @@ h1{
   position: fixed;
   display: flexbox;
   width: fit-content;
-  height: 4em;
-  border: solid white;
+  height: 2em;
+  /* border: solid rgb(0, 0, 0); */
   border-radius: 3em;
   z-index: 100;
   pointer-events: none;
@@ -251,14 +253,35 @@ h1{
   visibility: hidden;
   padding-right: 1em;
   padding-left: 1em;
-  padding-bottom: 0.5em;
+  
   cursor: none;
+  background-color: #ffffff;
+  box-shadow: 1em 1em 1em 1em #000000;
+   /* filter: invert(0.9);
+    mix-blend-mode: difference; */
   }
+/*   
+      g{
+        fill: #fff;
+        stroke-width: 0px;
+      }
+      svg {
+  width: auto;
+  height: 10vh;
+}
+
+.cls-1 {
+  fill: rgb(252, 252, 252);
+} */
+   
 
   #buttonmouse>h2{
-    color: white;
+    color: #000000;
     text-align: center;
+    /* filter: invert(1);
+    mix-blend-mode: difference; */
     cursor: none;
+    font-size: 0.8em;
   }
     #play, #pause{
       display:none;
