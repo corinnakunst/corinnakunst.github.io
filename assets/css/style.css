@@ -346,3 +346,98 @@ a:hover{
   text-decoration: underline;
 }
 
+.scrollcontainer{
+  grid-column: 2/3;
+  height: 100vh;
+  display: flexbox;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+
+  scroll-snap-type: x mandatory;
+}
+
+.fixcard{
+  position: absolute;
+  height: 70vh;
+  width: 25vw;
+    border: solid 0.1em;
+  border-radius: 7em;
+   padding: 2.5vw;
+  margin: 1vw;
+  background-color: #ffffff;
+  z-index: 5;
+  box-shadow: -10vw 0px rgb(255, 255, 255);
+  }
+
+
+
+.cards{
+  height: 70vh;
+  /* align-self: flex-end; */
+  flex: 0 0 25vw;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  
+  border: solid 0.1em;
+  border-radius: 7em;
+  padding: 2.5vw;
+  margin: 1vw;
+}
+  .endstart{
+    border: none;
+  }
+
+  .blur{
+    /* border: none; */
+    height: 90vh;
+    width: 40vw;
+    /* background-color: #ffffff72; */
+    position: absolute;
+    align-self: flex-end;
+    justify-self: flex-start;
+    margin-left: 65vw;
+    z-index: 4;
+
+     width: 32vw;
+      backdrop-filter: blur(5px);
+      mask-image: linear-gradient(to left,  rgb(0, 0, 0) 90%, transparent 100%);
+
+  }
+
+  .cards > button{
+    background-color: rgb(255, 255, 255);
+    width: 15vw;
+    height: 10vh;
+   
+    border: solid 0.1em;
+    margin-top: auto;
+    border-radius: 3em;
+    transform-origin: bottom left;
+
+    z-index: 1;
+    transition: all 0.6s ease;
+    transform:rotate(0deg)
+    
+  }
+
+  .cards > button:hover{
+    transition: all 0.6s ease;
+    transform:rotate(-15deg)
+    
+  }
+
+
+ 
+
+   
+
+
+
+  
