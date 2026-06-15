@@ -13,6 +13,10 @@ let puppilengrosse = augengrosse * 0.5;
 let pupilOffset;
 let scrollRatio;
 
+let maus;
+let y;
+let yanders;
+
 const meetEl = document.querySelector('.meetpoint');
 const meetBottom = meetEl.offsetTop + meetEl.offsetHeight;
 const remainingScrollHeightmeetpoint = document.body.scrollHeight - meetBottom;
@@ -76,12 +80,23 @@ clear();
     scrollRatio = 1 - exitProgress;
  } 
 
+  if (window.scrollY < exitBottom){
+    maus = map (scrollRatio, 0, 1, HALF_PI, -HALF_PI);
+     y = map (sin(maus), 1 ,-1 , scrollanfangauge, scrollendeauge);
+     yanders = map (sin(maus), -1 ,1 , scrollanfangaugeich, scrollendeaugeich);
+  }
 
-  let maus = map (scrollRatio, 0, 1, HALF_PI, -HALF_PI);
-  let y = map (sin(maus), 1 ,-1 , scrollanfangauge, scrollendeauge);
+  else{
+    maus = map (scrollRatio, 0, 1, -HALF_PI, HALF_PI);
+      y = map (sin(maus), 1 ,-1 , scrollanfangaugeich, scrollendeaugeich);
+     yanders = map (sin(maus), -1 ,1 , scrollanfangauge, scrollendeauge);
+  }
+  
+  // let maus = map (scrollRatio, 0, 1, HALF_PI, -HALF_PI);
+  // let y = map (sin(maus), 1 ,-1 , scrollanfangauge, scrollendeauge);
 
-  let mausandererichtung = map (scrollRatio, 0, 1, HALF_PI, -HALF_PI);
-  let yanders = map (sin(mausandererichtung), -1 ,1 , scrollanfangaugeich, scrollendeaugeich);
+  // let yanders = map (sin(maus), -1 ,1 , scrollanfangaugeich, scrollendeaugeich);
+
   drawEyes(y, yanders);
 }
 
