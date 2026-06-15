@@ -7,14 +7,14 @@ canvas {
   pointer-events: none;
   grid-column: 1/4;
   z-index: 5;
-  border: solid rgb(222, 16, 16);
+  
 }
 
 :root {
   --margin: 2vw;
   --main: 96vw;
-  --buffer: 2.5vw;
-  --projektheight: 96vw;
+  --buffer: 4vw;
+  --projektheight: 98vw;
   --projektwidth: 100vh;
   
 }
@@ -28,8 +28,8 @@ body{
   display: grid;
   grid-template-columns: 2vw 96vw 2vw;
   font-family:"poppins", poppins;
-/* 
-  scroll-snap-type: y mandatory; */
+
+  /* scroll-snap-type: y mandatory; */
 
   /* justify-items: center; */  
 } 
@@ -54,7 +54,7 @@ html{
     font-size: 1.5em;
   }
   a{
-  font-size: 0.5em;
+  font-size: 1em;
   }
 
   .klicknotiz{
@@ -82,7 +82,7 @@ html{
   }
 
   a{
-  font-size: 0.7em;
+  font-size: 1em;
   }
 
   :root{
@@ -95,7 +95,7 @@ html{
 h1{
     font-weight: lighter;
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 0vh;
     margin-left: var(--buffer);
   }
 
@@ -171,18 +171,18 @@ h1{
 
 
 /*___________________________________________________________PROJEKTSEITEN________________________________________________________________ */
-    .projektbutton{
+    /* .projektbutton{
       height: 80vh;
       width: 100vw;
       grid-area: 1/1/2/4;
       background-color: #000000;
-      box-shadow: 0em 0em 10vh 10vh #000000;
+      box-shadow: 0em 0em 10vh 10vh #000000; */
       /* background-image: linear-gradient(white,rgb(0, 0, 0) 10vh, black 90vh, white); */
-      backdrop-filter: blur(5px);
+      /* backdrop-filter: blur(5px); */
       /* mask-image: linear-gradient(to bottom, black 100%, white); */
-      border: none;
+      /* border: none;
      
-    }
+    } */
 
       /* .bild{
         align-self: center;
@@ -319,10 +319,10 @@ h1{
     #play, #pause{
       display:none;
     }
-
+/* 
   .projektbutton:hover{
     cursor: none;
-  }
+  } */
   .klicknotiz{
     display: none;
     visibility: hidden;
@@ -386,7 +386,7 @@ a:hover{
   width: 96vw;
   display: flex;
   flex-direction: column;
-
+  grid-column: 2/4;
 
 }
   .projektübersicht>h1{
@@ -411,10 +411,12 @@ a:hover{
 
   ::-webkit-scrollbar{
     display: none;
-  }
+
+  } 
+
   .container{
     width: 96vw;
-    height: calc(22vh - 0.1*(var(--projektheight)));
+    height: calc(77vh - 0.1*(var(--projektheight)));
     order: 1;
   
    
@@ -456,61 +458,70 @@ a:hover{
 
   .cards{
     position: sticky;
-    top: 0;
-    height: 50vw;
-    width: 70vh;
+    top: 0vw;
+    height: 90vw;
+    width: 15vh;
 
     background-color: #ffffff;
     border: solid 0.01em;
     border-radius: var(--corner_cards);
 
     padding: 2.5vw;
-    margin-bottom: 2.5vw;
+    margin-bottom: 0vw;
     margin-left: var(--buffer);
     
     /* display: flex;
     justify-content: flex-end; */
    
-
   }
+      #ende{
+        visibility: hidden;
+        height: 0vw;
+      }
     .cards>h2{
       position: absolute;
       transform: rotate(90deg) translateX(100%);
-      transform-origin:right top;
+      transform-origin: right top;
       /* height: fit-content;*/
-      width: fit-content; 
-      max-width: 50vw;
+      width: 60vw; 
+      max-width: 100vw;
       pointer-events: none;
       top: 2.5vw;
       right: 2.5vh;
 
     }
 
-    .homepositionlinkbutton{
-      position: absolute;
-      transform: rotate(90deg);
+    .projektlinkbutton{
+      /* position: absolute; */
+      transform: rotate(90deg) translateX(60vw);
       /* transform-origin:right top; */
-      left: 2.5vh;
-      top: 7vw;
-
+      /* right: 2.5vh;
+      top: 0vw; */
     }
+    .projektbutton{
+
+      background-color: rgb(255, 255, 255);
+      width: 25vw;
+      height: 12vh;
+   
+    }
+
 
   /*___________________________________Button___________________________________________________________________________________ */ 
 
   .linkbuttton{
     display:grid;
-    grid-template-columns: 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
     height: fit-content;
     width: fit-content;
     margin-top: auto;
   }
 
   .button{
+     grid-area: 1/1/1/1;
     background-color: rgb(255, 255, 255);
-    width: fit-content;
-    height: fit-content;
-   
-    border: solid 0.1em;
+    border: solid 0.01em;
     
     border-radius: var(--corner_buttons);
     transform-origin: bottom left;
@@ -527,6 +538,18 @@ a:hover{
     align-content: center;
     white-space: nowrap;
     
+  }
+
+  .backgroundbutton{
+    background-color: rgb(0, 0, 0);
+    justify-items: center;
+    align-content: center;
+    /* height: 10vh; */
+    grid-area: 1/1/1/1;
+    margin-top: 2vw;
+    border-radius: var(--corner_buttons);
+
+
   }
 
   .linkbuttton:hover .button{
@@ -552,7 +575,9 @@ a:hover{
   margin-top: 3vh;
   margin-right: 2vw;
   margin-left: 80vw;
-
+     width: fit-content;
+    height: fit-content;
+   
 }
 
 .containerbildvid{
