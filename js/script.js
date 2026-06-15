@@ -1,98 +1,98 @@
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
 
-  document.querySelectorAll('.contentscreen').forEach(screen => {
-    const button = screen.querySelector('.projektbutton');
-    const bilder = screen.querySelectorAll('.bild');
-    const count = screen.querySelectorAll('.counter');
+//   document.querySelectorAll('.contentscreen').forEach(screen => {
+//     const button = screen.querySelector('.projektbutton');
+//     const bilder = screen.querySelectorAll('.bild');
+//     const count = screen.querySelectorAll('.counter');
 
-    let currentIndex = 0;
+//     let currentIndex = 0;
 
-    // erstes Bild aktiv setzen
-    bilder[currentIndex].classList.remove('inactive');
-    bilder[currentIndex].classList.add('active');
-    count[currentIndex].classList.remove('inactive');
-    count[currentIndex].classList.add('active');
+//     // erstes Bild aktiv setzen
+//     bilder[currentIndex].classList.remove('inactive');
+//     bilder[currentIndex].classList.add('active');
+//     count[currentIndex].classList.remove('inactive');
+//     count[currentIndex].classList.add('active');
 
-    button.addEventListener('click', () => {
-      // aktuelles Bild deaktivieren
-      bilder[currentIndex].classList.remove('active');
-      bilder[currentIndex].classList.add('inactive');
-      count[currentIndex].classList.remove('active');
-      count[currentIndex].classList.add('inactive');
+//     button.addEventListener('click', () => {
+//       // aktuelles Bild deaktivieren
+//       bilder[currentIndex].classList.remove('active');
+//       bilder[currentIndex].classList.add('inactive');
+//       count[currentIndex].classList.remove('active');
+//       count[currentIndex].classList.add('inactive');
 
-      // nächstes Bild (loop)
-      currentIndex = (currentIndex + 1) % bilder.length;
+//       // nächstes Bild (loop)
+//       currentIndex = (currentIndex + 1) % bilder.length;
 
-      // neues Bild aktivieren
-      bilder[currentIndex].classList.remove('inactive');
-      bilder[currentIndex].classList.add('active');
-      count[currentIndex].classList.remove('inactive');
-      count[currentIndex].classList.add('active');
-    });
-  });
+//       // neues Bild aktivieren
+//       bilder[currentIndex].classList.remove('inactive');
+//       bilder[currentIndex].classList.add('active');
+//       count[currentIndex].classList.remove('inactive');
+//       count[currentIndex].classList.add('active');
+//     });
+//   });
 
-  const buttonmouse = document.getElementById("buttonmouse");
-  const screens = document.querySelectorAll(".contentscreen");
+//   const buttonmouse = document.getElementById("buttonmouse");
+//   const screens = document.querySelectorAll(".contentscreen");
 
-  screens.forEach(screen => {
-    screen.addEventListener("mouseenter", () => {
-      buttonmouse.style.visibility = "visible";
-      buttonmouse.style.cursor = "none";
+//   screens.forEach(screen => {
+//     screen.addEventListener("mouseenter", () => {
+//       buttonmouse.style.visibility = "visible";
+//       buttonmouse.style.cursor = "none";
 
-    });
-    screen.addEventListener("mouseleave", () => {
-      buttonmouse.style.visibility = "hidden";
-    });
-  });
+//     });
+//     screen.addEventListener("mouseleave", () => {
+//       buttonmouse.style.visibility = "hidden";
+//     });
+//   });
 
-  document.addEventListener("mousemove", (event) => {
-    const x = event.clientX;
-    const y = event.clientY;
+//   document.addEventListener("mousemove", (event) => {
+//     const x = event.clientX;
+//     const y = event.clientY;
 
-    buttonmouse.style.left = x + "px";
-    buttonmouse.style.top = y + "px";
-    // buttonmouse.textContent = `X: ${x} | Y: ${y}`;
-  });
+//     buttonmouse.style.left = x + "px";
+//     buttonmouse.style.top = y + "px";
+//     // buttonmouse.textContent = `X: ${x} | Y: ${y}`;
+//   });
 
-  const videos = document.querySelectorAll("video");
-  const mehr = document.getElementById("mehr");
-  const play = document.getElementById("play");
-  const pause = document.getElementById("pause");
+//   const videos = document.querySelectorAll("video");
+//   const mehr = document.getElementById("mehr");
+//   const play = document.getElementById("play");
+//   const pause = document.getElementById("pause");
 
-  var vidplayer= false;
+//   var vidplayer= false;
 
 
-  videos.forEach(video => {
-    video.addEventListener("mouseenter", () => {
-      mehr.style.display = "none";
-      play.style.display = "block";
-      pause.style.display = "none";
-      buttonmouse.style.cursor = "none";
+//   videos.forEach(video => {
+//     video.addEventListener("mouseenter", () => {
+//       mehr.style.display = "none";
+//       play.style.display = "block";
+//       pause.style.display = "none";
+//       buttonmouse.style.cursor = "none";
 
-    });
-    video.addEventListener("mouseleave", () => {
-      mehr.style.display = "block";
-      play.style.display = "none";
-      pause.style.display = "none";
+//     });
+//     video.addEventListener("mouseleave", () => {
+//       mehr.style.display = "block";
+//       play.style.display = "none";
+//       pause.style.display = "none";
 
-    });
+//     });
 
-    video.addEventListener("click", () => {
-      if (vidplayer === false){
-      play.style.display = "none"
-      pause.style.display = "block";
-      buttonmouse.style.cursor = "none";
-      vidplayer = true;
-      }
-      else{
-        vidplayer = false;
-        play.style.display = "block"
-      pause.style.display = "none";
-      }
+//     video.addEventListener("click", () => {
+//       if (vidplayer === false){
+//       play.style.display = "none"
+//       pause.style.display = "block";
+//       buttonmouse.style.cursor = "none";
+//       vidplayer = true;
+//       }
+//       else{
+//         vidplayer = false;
+//         play.style.display = "block"
+//       pause.style.display = "none";
+//       }
 
-    });
+//     });
   
-  });
+//   });
 
-});
+// });
 
