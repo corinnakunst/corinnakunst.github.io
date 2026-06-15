@@ -7,23 +7,36 @@ canvas {
   pointer-events: none;
   grid-column: 1/4;
   z-index: 5;
+  border: solid rgb(222, 16, 16);
 }
 
 :root {
   --margin: 2vw;
   --main: 96vw;
-  --buffer: 2.5vw
+  --buffer: 2.5vw;
+  --projektheight: 96vw;
+  --projektwidth: 100vh;
+  
 }
 
 body{
   margin-left: 0px;
   margin-top: 0px;
+  margin-right: 0px;
   overflow-x: hidden;
+  overflow-y: scroll;
   display: grid;
   grid-template-columns: 2vw 96vw 2vw;
   font-family:"poppins", poppins;
+/* 
+  scroll-snap-type: y mandatory; */
+
   /* justify-items: center; */  
 } 
+html{
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
 
 /*___________________________________________________________FONTS________________________________________________________________ */
 
@@ -40,9 +53,17 @@ body{
   p{
     font-size: 1.5em;
   }
+  a{
+  font-size: 0.5em;
+  }
 
   .klicknotiz{
     visibility: hidden;
+  }
+
+    :root{
+    --corner_cards: 4em;
+    --corner_buttons: 4em;
   }
 }
 
@@ -53,11 +74,20 @@ body{
   }
 
   h2{
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   p{
     font-size: 1.3em;
+  }
+
+  a{
+  font-size: 0.7em;
+  }
+
+  :root{
+    --corner_cards: 2em;
+    --corner_buttons: 4em;
   }
 
 }
@@ -88,6 +118,8 @@ h1{
 
 .screen{
   grid-column: 2/3;
+  scroll-snap-align: end;
+  scroll-snap-stop: normal;
 }
 
 .intro{
@@ -99,7 +131,7 @@ h1{
 }
 
     .meetpoint{
-      height: 0.001vh;
+      height: 0.0000000001vh;
     }
 
 .projekt{
@@ -123,7 +155,7 @@ h1{
 }
 
     .exitpoint{
-      height: 0.001vh;
+      height: 0.00000000000001vh;
     }
 
 
@@ -152,22 +184,21 @@ h1{
      
     }
 
-      .bild{
+      /* .bild{
         align-self: center;
         justify-self: center;
         grid-area: 1/1/2/4;
         position: relative;
-        /* border: none; */
-       }
+       } */
 
-       img.bild{
+       /* img.bild{
         z-index: 10 !important;
         pointer-events: none;
-       }
+       } */
 
-       video.bild{
+       /* video.bild{
         z-index: 11 !important;
-       }
+       } */
 
 
       @media screen and (min-width: 601px) {
@@ -181,6 +212,8 @@ h1{
           .quadrat{
             width: 50vw;
           }
+
+          
         }
 
         @media screen and (max-width: 600px) {
@@ -346,98 +379,247 @@ a:hover{
   text-decoration: underline;
 }
 
-.scrollcontainer{
-  grid-column: 2/3;
+/*___________________________________________________________PROJEKTÜBERSICHT____________________________________________________ */
+
+.projektübersicht{
   height: 100vh;
-  display: flexbox;
+  width: 96vw;
+  display: flex;
+  flex-direction: column;
+
+
+}
+  .projektübersicht>h1{
+    z-index: 7;
+    order: 2;
+  }
+
+/* .scrollcontainer{
+  margin-left: 20vw;
+  flex-shrink: 1;
+  height: 100vh;
+  display: flex;
   overflow-x: scroll;
   overflow-y: hidden;
-  display: flex;
+  scroll-behavior: smooth;
   flex-direction: row;
   align-items: flex-end;
 
-
-  scroll-snap-type: x mandatory;
-}
-
-.fixcard{
-  position: absolute;
-  height: 70vh;
-  width: 25vw;
-    border: solid 0.1em;
-  border-radius: 7em;
-   padding: 2.5vw;
-  margin: 1vw;
-  background-color: #ffffff;
-  z-index: 5;
-  box-shadow: -10vw 0px rgb(255, 255, 255);
-  }
-
-
-
-.cards{
-  height: 70vh;
-  /* align-self: flex-end; */
-  flex: 0 0 25vw;
-  scroll-snap-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
+  scroll-snap-type: x ;
   
-  border: solid 0.1em;
-  border-radius: 7em;
-  padding: 2.5vw;
-  margin: 1vw;
-}
-  .endstart{
+} */
+
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  .container{
+    width: 96vw;
+    height: calc(22vh - 0.1*(var(--projektheight)));
+    order: 1;
+  
+   
+  }
+
+  .scrollcontainer{
+    width: var( --projektwidth);
+    height: var(--projektheight); 
+    /* padding: 180vh 0 0 0; */
+    background: rgb(255, 255, 255);
+    overflow-y: auto;
+    overflow-x: hidden;
+    transform: rotate(-90deg) translateX(-100vh); 
+    transform-origin: top left; 
+  
+  }
+
+  #anfang{
     border: none;
+    height: 200vw;
+    /* padding: 0.0000001vw;
+    padding-top: 90vh;
+    margin: 0.000001vw;
+    padding-left: 0.00000001vw;
+    padding-bottom: 0.00000001vw; */
+    transform: rotate(90deg);
+    transform-origin: right top;
+  } 
+  .endbutton{
+    display: grid;
+    margin-right: 5vw;
+    margin-bottom: 2.5vh;
+    position:sticky;
+    top: 0;
+    scroll-snap-align: start;
+    transform: rotate(90deg);
+    transform-origin: right top;
   }
 
-  .blur{
-    /* border: none; */
-    height: 90vh;
-    width: 40vw;
-    /* background-color: #ffffff72; */
-    position: absolute;
-    align-self: flex-end;
-    justify-self: flex-start;
-    margin-left: 65vw;
-    z-index: 4;
+  .cards{
+    position: sticky;
+    top: 0;
+    height: 50vw;
+    width: 70vh;
 
-     width: 32vw;
-      backdrop-filter: blur(5px);
-      mask-image: linear-gradient(to left,  rgb(0, 0, 0) 90%, transparent 100%);
+    background-color: #ffffff;
+    border: solid 0.01em;
+    border-radius: var(--corner_cards);
+
+    padding: 2.5vw;
+    margin-bottom: 2.5vw;
+    margin-left: var(--buffer);
+    
+    /* display: flex;
+    justify-content: flex-end; */
+   
 
   }
+    .cards>h2{
+      position: absolute;
+      transform: rotate(90deg) translateX(100%);
+      transform-origin:right top;
+      /* height: fit-content;*/
+      width: fit-content; 
+      max-width: 50vw;
+      pointer-events: none;
+      top: 2.5vw;
+      right: 2.5vh;
 
-  .cards > button{
+    }
+
+    .homepositionlinkbutton{
+      position: absolute;
+      transform: rotate(90deg);
+      /* transform-origin:right top; */
+      left: 2.5vh;
+      top: 7vw;
+
+    }
+
+  /*___________________________________Button___________________________________________________________________________________ */ 
+
+  .linkbuttton{
+    display:grid;
+    grid-template-columns: 1;
+    height: fit-content;
+    width: fit-content;
+    margin-top: auto;
+  }
+
+  .button{
     background-color: rgb(255, 255, 255);
-    width: 15vw;
-    height: 10vh;
+    width: fit-content;
+    height: fit-content;
    
     border: solid 0.1em;
-    margin-top: auto;
-    border-radius: 3em;
+    
+    border-radius: var(--corner_buttons);
     transform-origin: bottom left;
+    margin-top: 2vw;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
 
     z-index: 1;
     transition: all 0.6s ease;
-    transform:rotate(0deg)
+    transform:rotate(0deg);
+    justify-items: center;
+    align-content: center;
+    white-space: nowrap;
     
   }
 
-  .cards > button:hover{
+  .linkbuttton:hover .button{
     transition: all 0.6s ease;
     transform:rotate(-15deg)
     
   }
 
 
- 
+/*___________________________________________________________________________________________________________________________ */ 
+/*_______________________________________________________Projektseite____________________________________________________________________ */ 
 
-   
+.projektseite > h1 {
+  padding-top: 5vh;
+}
+.projektseite > p {
+  padding-bottom: 5vh;
+}
+
+.homebutton{
+  position: fixed;
+  justify-self: flex-end;
+  margin-top: 3vh;
+  margin-right: 2vw;
+  margin-left: 80vw;
+
+}
+
+.containerbildvid{
+  display: grid;
+}
+
+.containerbildvid img,
+.containerbildvid video{
+  max-width: 100%;
+  max-height: 90vh;
+  display: block;
+  object-fit: contain;
+  justify-items: flex-start;
+}
+
+
+@media screen and (min-width: 601px) {
+
+  .containerbildvid{
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10vh 2vh;
+  }
+
+  .small{
+  grid-column: span 1;
+  }
+
+  .middle{
+    grid-column: span 2;
+
+  }
+
+  .big{
+    grid-column: span 3;
+
+  }
+
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+
+  .containerbildvid{
+  grid-template-columns: 1fr;
+  gap: 10vh 2vh;
+  }
+
+  .small, .middle, .big{
+    grid-column: span 1;
+  }
+
+}
 
 
 
+/* .containerbildvid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10vh 2vh;
+}
+
+.containerbildvid img,
+.containerbildvid video{
+  max-width: 100%;
+  max-height: 90vh;
+  display: block;
+  object-fit: contain;
+  justify-items: flex-start;
+} */
   

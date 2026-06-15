@@ -1,0 +1,581 @@
+
+canvas {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  grid-column: 1/4;
+  z-index: 5;
+}
+
+:root {
+  --margin: 2vw;
+  --main: 96vw;
+  --buffer: 2.5vw
+}
+
+body{
+  margin-left: 0px;
+  margin-top: 0px;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 2vw 96vw 2vw;
+  font-family:"poppins", poppins;
+  /* justify-items: center; */  
+} 
+
+/*___________________________________________________________FONTS________________________________________________________________ */
+
+/* If the screen size is 601px wide or more, set the font-size of <div> to 80px */
+@media screen and (min-width: 601px) {
+  h1{
+  font-size: 3em;
+  }
+
+  h2{
+    font-size: 3em;
+  }
+
+  p{
+    font-size: 1.5em;
+  }
+  a{
+  font-size: 0.5em;
+  }
+
+  .klicknotiz{
+    visibility: hidden;
+  }
+
+    :root{
+    --corner_cards: 4em;
+    --corner_buttons: 4em;
+  }
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+  h1{
+  font-size: 2em;
+  }
+
+  h2{
+    font-size: 1.5em;
+  }
+
+  p{
+    font-size: 1.3em;
+  }
+
+  a{
+  font-size: 0.7em;
+  }
+
+  :root{
+    --corner_cards: 2em;
+    --corner_buttons: 4em;
+  }
+
+}
+
+h1{
+    font-weight: lighter;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: var(--buffer);
+  }
+
+  h2{
+    font-weight: lighter;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  p{
+    font-weight: lighter;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    /* font-size: calc(20px + 1vw); */
+    hyphens: auto;
+  }
+/* grid-area: x / x / x / x(row-start col-start row-end col-end) */
+
+/*___________________________________________________________SCHLEIFEN________________________________________________________________ */
+
+.screen{
+  grid-column: 2/3;
+}
+
+.intro{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start; 
+}
+
+    .meetpoint{
+      height: 0.001vh;
+    }
+
+.projekt{
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start; 
+}
+
+    .spacer{
+      height: var(--buffer);
+    }
+
+.outro{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: flex-start; 
+}
+
+    .exitpoint{
+      height: 0.001vh;
+    }
+
+
+.contentscreen{
+  grid-column: 1/4;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: var(--margin) var(--main) var(--margin); ;
+  /* flex-direction: column; */
+  justify-items: center;
+  align-items: center;
+}
+
+
+/*___________________________________________________________PROJEKTSEITEN________________________________________________________________ */
+    .projektbutton{
+      height: 80vh;
+      width: 100vw;
+      grid-area: 1/1/2/4;
+      background-color: #000000;
+      box-shadow: 0em 0em 10vh 10vh #000000;
+      /* background-image: linear-gradient(white,rgb(0, 0, 0) 10vh, black 90vh, white); */
+      backdrop-filter: blur(5px);
+      /* mask-image: linear-gradient(to bottom, black 100%, white); */
+      border: none;
+     
+    }
+
+      /* .bild{
+        align-self: center;
+        justify-self: center;
+        grid-area: 1/1/2/4;
+        position: relative;
+       } */
+
+       /* img.bild{
+        z-index: 10 !important;
+        pointer-events: none;
+       } */
+
+       /* video.bild{
+        z-index: 11 !important;
+       } */
+
+
+      @media screen and (min-width: 601px) {
+          .lang{
+            height: 75vh;
+          }
+          .breit{
+            height: 75vh;
+
+          }
+          .quadrat{
+            width: 50vw;
+          }
+
+          
+        }
+
+        @media screen and (max-width: 600px) {
+          .lang{
+            height: 50vw;
+          }
+          .breit{
+            width: 50vw;
+          }
+          .quadrat{
+            width: 50vw;
+          }
+        }
+
+/*___________________________________________________________COUNTER________________________________________________________________ */      
+      .counter{
+        grid-area: 1/2/2/3;
+        z-index: 6;
+        pointer-events: none;
+        color: white;
+        margin-left: var(--buffer);
+        margin-bottom: 10vh;
+        width: 2vw;
+        align-self: flex-end;
+        justify-self: flex-start;
+      }
+      .gesamtzahl{
+        z-index: 7;
+        grid-area: 1/2/2/3;
+        color: white;
+        margin-left: 4.5vw;
+        margin-bottom: 10vh;
+        align-self: flex-end;
+        justify-self: flex-start;
+      }
+
+        .inactive{
+          /* visibility: hidden; */
+          /* opacity: 0; */
+          pointer-events: none;
+          display: none;
+        }
+
+        .active{
+          /* visibility: visible; */
+          /* opacity: 100; */
+          display: block;
+        }
+
+    @media screen and (max-width: 600px) {
+      .gesamtzahl{
+        margin-left: 8vw;
+      }
+
+    }
+
+
+/*___________________________________________________________WEITER________________________________________________________________ */ 
+@media screen and (min-width: 601px) {
+  #buttonmouse{
+  position: fixed;
+  display: flexbox;
+  width: fit-content;
+  height: 2em;
+  /* border: solid rgb(0, 0, 0); */
+  border-radius: 3em;
+  z-index: 100;
+  pointer-events: none;
+  transform: translate(-2em, -2em);
+  visibility: hidden;
+  padding-right: 1em;
+  padding-left: 1em;
+  
+  cursor: none;
+  background-color: #ffffff;
+  box-shadow: 1em 1em 1em 1em #000000;
+   /* filter: invert(0.9);
+    mix-blend-mode: difference; */
+  }
+/*   
+      g{
+        fill: #fff;
+        stroke-width: 0px;
+      }
+      svg {
+  width: auto;
+  height: 10vh;
+}
+
+.cls-1 {
+  fill: rgb(252, 252, 252);
+} */
+   
+
+  #buttonmouse>h2{
+    color: #000000;
+    text-align: center;
+    /* filter: invert(1);
+    mix-blend-mode: difference; */
+    cursor: none;
+    font-size: 0.8em;
+  }
+    #play, #pause{
+      display:none;
+    }
+
+  .projektbutton:hover{
+    cursor: none;
+  }
+  .klicknotiz{
+    display: none;
+    visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .klicknotiz{
+    color: rgb(255, 255, 255);
+    border: solid white;
+    border-radius: 20%;
+    width: fit-content;
+    height: 2em;
+    grid-area: 1/2/2/3;
+    z-index: 8;
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin-bottom: 10vh;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .klicknotiz>h2{
+    text-align: center;
+    font-size: 1em;
+    padding: 0.2em;
+  }
+
+  #buttonmouse{
+    visibility: hidden;
+    display: none;
+  }
+   #buttonmouse>h2{
+    visibility: hidden;
+    display: none;
+   }
+
+}
+/*___________________________________________________________VIDEO________________________________________________________________ */ 
+
+video::-webkit-media-controls-panel {
+   background-image: none !important;
+   filter: brightness(0.4);
+}
+/*___________________________________________________________LINK________________________________________________________________ */ 
+
+a:link{
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+/*___________________________________________________________PROJEKTÜBERSICHT____________________________________________________ */
+
+.projektübersicht{
+  grid-column: 2/3;
+  height: 100vh;
+  width: 96vw;
+}
+
+/* .projektübersicht> div:first-child{
+  width: 20vw;
+  height: 100vh;
+  flex-shrink: 0;
+} */
+.scrollcontainer{
+  margin-left: 20vw;
+  /* width: 100vw; */
+  flex-shrink: 1;
+  height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  flex-direction: row;
+  align-items: flex-end;
+
+  scroll-snap-type: x ;
+
+  transform: rotate(-90deg) translateY(-80vh);
+  transform-origin: right top;
+}
+  ::-webkit-scrollbar{
+    display: none;
+  }
+
+
+  #anfang{
+    flex: 0 0 0.000000002vw;
+    border: none;
+    padding: 0.0000001vw;
+    padding-top: 90vh;
+    margin: 0.000001vw;
+    padding-left: 0.00000001vw;
+    padding-bottom: 0.00000001vw;
+  } 
+  .endbutton{
+    display: grid;
+    margin-right: 5vw;
+    margin-bottom: 2.5vh;
+    position:sticky;
+    left: 0vw;
+    scroll-snap-align: start;
+  }
+
+  .cards{
+    position: sticky;
+    left: 0vw;
+    height: 70vh;
+    flex: 0 0 50vw;
+    /* scroll-snap-align: start; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    border: solid 0.01em;
+    border-radius: var(--corner_cards);
+    padding: 2.5vw;
+    margin-right: 5vw;
+    background-color: #ffffff;
+    scroll-margin-top: 15vh;
+  }
+ 
+
+  .blur{
+    /* border: none; */
+    height: 90vh;
+    width: 40vw;
+    /* background-color: #ffffff72; */
+    position: absolute;
+    align-self: flex-end;
+    justify-self: flex-start;
+    margin-left: 65vw;
+    z-index: 4;
+
+     width: 32vw;
+      backdrop-filter: blur(5px);
+      mask-image: linear-gradient(to left,  rgb(0, 0, 0) 90%, transparent 100%);
+
+  }
+
+  .linkbuttton{
+    display:grid;
+    grid-template-columns: 1;
+    height: fit-content;
+    width: fit-content;
+    margin-top: auto;
+  }
+
+  .button{
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    height: fit-content;
+   
+    border: solid 0.1em;
+    
+    border-radius: var(--corner_buttons);
+    transform-origin: bottom left;
+    margin-top: 2vw;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+
+    z-index: 1;
+    transition: all 0.6s ease;
+    transform:rotate(0deg);
+    justify-items: center;
+    align-content: center;
+    white-space: nowrap;
+    
+  }
+
+  .linkbuttton:hover .button{
+    transition: all 0.6s ease;
+    transform:rotate(-15deg)
+    
+  }
+
+
+/*___________________________________________________________________________________________________________________________ */ 
+/*_______________________________________________________Projektseite____________________________________________________________________ */ 
+
+.projektseite > h1 {
+  padding-top: 5vh;
+}
+.projektseite > p {
+  padding-bottom: 5vh;
+}
+
+.homebutton{
+  position: fixed;
+  justify-self: flex-end;
+  margin-top: 3vh;
+  margin-right: 2vw;
+  margin-left: 80vw;
+
+}
+
+.containerbildvid{
+  display: grid;
+}
+
+.containerbildvid img,
+.containerbildvid video{
+  max-width: 100%;
+  max-height: 90vh;
+  display: block;
+  object-fit: contain;
+  justify-items: flex-start;
+}
+
+
+@media screen and (min-width: 601px) {
+
+  .containerbildvid{
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10vh 2vh;
+  }
+
+  .small{
+  grid-column: span 1;
+  }
+
+  .middle{
+    grid-column: span 2;
+
+  }
+
+  .big{
+    grid-column: span 3;
+
+  }
+
+}
+
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 600px) {
+
+  .containerbildvid{
+  grid-template-columns: 1fr;
+  gap: 10vh 2vh;
+  }
+
+  .small, .middle, .big{
+    grid-column: span 1;
+  }
+
+}
+
+
+
+/* .containerbildvid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 10vh 2vh;
+}
+
+.containerbildvid img,
+.containerbildvid video{
+  max-width: 100%;
+  max-height: 90vh;
+  display: block;
+  object-fit: contain;
+  justify-items: flex-start;
+} */
+  
