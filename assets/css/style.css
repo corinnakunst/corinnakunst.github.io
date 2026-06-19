@@ -28,7 +28,7 @@ body{
   display: grid;
   grid-template-columns: 2vw 96vw 2vw;
   font-family:"poppins", poppins;
-
+  background-color: #000000;
   /* scroll-snap-type: y mandatory; */
 
   /* justify-items: center; */  
@@ -115,12 +115,27 @@ h1{
 /* grid-area: x / x / x / x(row-start col-start row-end col-end) */
 
 /*___________________________________________________________SCHLEIFEN________________________________________________________________ */
+/* .oben{
+  height: 30vh;
+  scroll-snap-align: end;
+  scroll-snap-stop: normal;
+  grid-row: 2/3;
+} */
 
 .screen{
-  grid-column: 2/3;
+  grid-column: 1/4;
+  display: grid;
+  background-color: #ffffff;
+  grid-template-columns: 2vw 96vw 2vw; 
+  padding-left: 2vw;
+  padding-right: 2vw;
+
+  /* pointer-events: none; */
+
   scroll-snap-align: end;
   scroll-snap-stop: normal;
 }
+
 
 .intro{
   height: 100vh;
@@ -386,7 +401,9 @@ a:hover{
   width: 96vw;
   display: flex;
   flex-direction: column;
-  grid-column: 2/4;
+  grid-column: 1/4;
+  padding-left: 2vw;
+  background-color: #ffffff;
 
 }
   .projektübersicht>h1{
@@ -562,23 +579,46 @@ a:hover{
 /*___________________________________________________________________________________________________________________________ */ 
 /*_______________________________________________________Projektseite____________________________________________________________________ */ 
 
-.projektseite > h1 {
-  padding-top: 5vh;
+.rund{
+  grid-column: 1/4;
+  height: var(--buffer);
+  background-color: #ffffff;
+  border-top-left-radius: var(--corner_buttons);
+  border-top-right-radius: var(--corner_buttons);
 }
-.projektseite > p {
-  padding-bottom: 5vh;
+  .gedreht{
+    transform: rotate(180deg);
+  }
+.projektscreen{
+  background-color: #ffffff;
+  grid-column: 1/4;
+    padding-left: 2vw;
+  padding-right: 2vw;
 }
 
-.homebutton{
-  position: fixed;
-  justify-self: flex-end;
-  margin-top: 3vh;
-  margin-right: 2vw;
-  margin-left: 80vw;
-     width: fit-content;
-    height: fit-content;
-   
+.info{
+  display: grid;
 }
+  /* .info > h1 {
+    grid-area: 1/2/4/3;
+  } */
+  /* .info > p {
+    grid-area: 3/2/4/3;
+    padding-bottom: 5vh;
+  } */
+
+  .homebutton{
+    position: fixed;
+    grid-area: 1/1/2/2;
+    justify-self: flex-end;
+    /* justify-self: flex-end;
+    margin-top: 3vh;
+    margin-right: 2vw;
+    margin-left: 80vw; */
+      width: fit-content;
+      height: fit-content;
+    
+  }
 
 .containerbildvid{
   display: grid;
@@ -587,34 +627,35 @@ a:hover{
 .containerbildvid img,
 .containerbildvid video{
   max-width: 100%;
-  max-height: 90vh;
+  /* max-height: 100%; */
+  max-height: 80vh;
   display: block;
   object-fit: contain;
   justify-items: flex-start;
 }
 
 
+
 @media screen and (min-width: 601px) {
 
   .containerbildvid{
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10vh 2vh;
+  grid-template-columns: repeat(3, 30vw);
+  /* grid-template-rows: repeat(3,max(28vh));
+  grid-auto-rows: max(28vh); */
+  gap: 3vw;
   }
 
-  .small{
-  grid-column: span 1;
-  }
+  .small{grid-column: span 1;}
 
-  .middle{
-    grid-column: span 2;
+  .middle{ grid-column: span 2;}
 
-  }
+  .big{grid-column: span 3;}
 
-  .big{
-    grid-column: span 3;
+  /* .ysmall{grid-row: span 1;}
 
-  }
+  .ymiddle{ grid-row: span 2;}
 
+  .ybig{grid-row: span 3;} */
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
@@ -629,6 +670,10 @@ a:hover{
     grid-column: span 1;
   }
 
+}
+
+.handy{
+  border-radius: 2.7em;
 }
 
 
