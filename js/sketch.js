@@ -25,6 +25,27 @@ const exitEl = document.querySelector('.exitpoint');
 const exitBottom = exitEl.offsetTop + exitEl.offsetHeight;
 const remainingScrollHeightexitpoint = document.body.scrollHeight - exitBottom;
 
+
+////
+
+const end = document.querySelector('.end');
+let projektanzahl= Number(end.dataset.size);
+end.style.height = `${100 / (projektanzahl + 2)}vh`;
+end.style.top = `${(100 / (projektanzahl + 2)) * (projektanzahl + 2)}vh`;
+
+
+document.querySelectorAll('.element').forEach(element => {
+    let duration = Number(element.dataset.duration);
+
+    let newTop = `${(100 / (projektanzahl + 2)) * duration}vh`;
+    let newHeight = `${(100 / (projektanzahl + 2)) * 2}vh`;
+
+    element.style.top = newTop;
+    element.style.height = newHeight;
+
+});
+//////
+
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
 }
@@ -91,6 +112,7 @@ clear();
       y = map (sin(maus), 1 ,-1 , scrollanfangaugeich, scrollendeaugeich);
      yanders = map (sin(maus), -1 ,1 , scrollanfangauge, scrollendeauge);
   }
+
   
   // let maus = map (scrollRatio, 0, 1, HALF_PI, -HALF_PI);
   // let y = map (sin(maus), 1 ,-1 , scrollanfangauge, scrollendeauge);
@@ -100,12 +122,11 @@ clear();
   drawEyes(y, yanders);
 }
 
-function drawEyes( y, yanders) {
+function drawEyes( y, yanders, scrollProgress) {
     pupilOffset = puppilengrosse * 0.4;
 
-
     pupilOffset = map(window.scrollY, 0, (document.body.scrollHeight - (windowHeight)-(remainingScrollHeightmeetpoint)), - puppilengrosse * 0.35 , puppilengrosse * 0.35);
-    let xpupil= min (pupilOffset,  puppilengrosse * 0.3)
+    let xpupil= min (pupilOffset,  puppilengrosse * 0.3);
 
     push()
   
